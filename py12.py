@@ -63,24 +63,30 @@ class turtle(object):
 
     def count_moves(self):
         count = 0
-        
-        while self.x != 2:
-            if self.x > 2:
-                self.x -= self.s
-                count += 1
-            else:
-                self.x += self.s
-                count += 1   
+        x2 = int(input('input x2: '))
+        y2 = int(input('input y2: '))
+
+        # print(x2 % self.s + y2 % self.s)
+
+        if (x2 % self.s == 0) and (y2 % self.s == 0):
+            while self.x != x2:
+                if self.x > x2:
+                    self.x -= self.s
+                    count += 1
+                else:
+                    self.x += self.s
+                    count += 1   
                 
-        while self.y != 2:
-            if self.y > 2:
-                self.y -= self.s
-                count += 1
-            else:
-                self.y += self.s
-                count += 1
-        print(count)
-        
+            while self.y != y2:
+                if self.y > y2:
+                    self.y -= self.s
+                    count += 1
+                else:
+                    self.y += self.s
+                    count += 1
+            print(count)
+        else:
+            print('ERROR')
         
 aaa = turtle()
 
@@ -90,7 +96,6 @@ aaa.go_down()
 aaa.go_left()
 aaa.go_right()
 aaa.degrade()
-
 aaa.count_moves()
 
 input()
